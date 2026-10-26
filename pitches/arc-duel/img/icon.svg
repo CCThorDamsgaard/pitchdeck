@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffb347"/>
+      <stop offset="1" stop-color="#e2572b"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="56" fill="url(#bg)"/>
+  <!-- bow -->
+  <path d="M150 52 Q214 128 150 204" fill="none" stroke="#5a2e12" stroke-width="12" stroke-linecap="round"/>
+  <line x1="150" y1="52" x2="150" y2="204" stroke="#fff3e0" stroke-width="3"/>
+  <!-- arrow -->
+  <line x1="58" y1="128" x2="226" y2="128" stroke="#fff3e0" stroke-width="7" stroke-linecap="round"/>
+  <path d="M226 128 L204 114 L204 142 Z" fill="#fff3e0"/>
+  <path d="M58 128 L44 114 M58 128 L44 142 M70 128 L56 114 M70 128 L56 142" stroke="#fff3e0" stroke-width="5" stroke-linecap="round"/>
+  <!-- ragdoll -->
+  <circle cx="104" cy="70" r="20" fill="#fff3e0"/>
+  <path d="M100 74 l8 -8 M100 66 l8 8" stroke="#e2572b" stroke-width="4" stroke-linecap="round"/>
+  <path d="M104 92 L110 160 M108 112 L150 128 M108 112 L76 138 M110 160 L86 210 M110 160 L136 206" fill="none" stroke="#fff3e0" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- crafting sparkle -->
+  <path d="M200 40 l6 14 14 6 -14 6 -6 14 -6 -14 -14 -6 14 -6z" fill="#fff3e0"/>
+</svg>

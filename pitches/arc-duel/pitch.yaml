@@ -1,0 +1,221 @@
+# Arc Duel (working title; was "Ragdoll Archers Crafting"). Source: "Ragdoll Archers Crafting – Game Design Doc" (Oct 25, 2026, @Thor).
+# Markdown is allowed in every text field. Mermaid goes in a ```mermaid fence.
+# Comparables are for internal use only. Never name them in marketing.
+
+title: Arc Duel
+subtitle: Working title
+icon: img/icon.svg
+pitch: >
+  A turn-based 1v1 archery duel where reactive ragdolls take limb damage that changes how they aim and move,
+  and players craft weapons and defenses mid-match from elements they shoot out of the air.
+formula: Ragdoll Archers × Craftera × Kick the Buddy
+skip:
+  label: Skip the justification
+  to: p1
+
+convictions: [c1, c2, c3]
+
+evidence:
+  - id: e1
+    title: Ad creative test (planned)
+    type: testing
+    summary: >
+      Before building, make three short fake ads and run a small CTR/CPI test on TikTok or Meta:
+      an archery duel with limb reactions, a melee brawl, and a crafting reveal that ends in a hit.
+      This checks whether the ragdoll reaction sells.
+    supports: [c1]
+    data: Not run yet.
+
+ingredients:
+  toy:
+    - name: Ragdoll Archers
+      image: img/ragdoll-archers.png
+      take: |
+        **Ragdoll archery duel.**
+
+        - Aim by moving the ragdoll's body: drag to set angle and draw power
+        - A short arc preview shows the first part of the trajectory
+        - One arrow can hit the opponent, the floating materials, or both
+    - name: Bowmasters
+      image: img/bowmasters.png
+      take: Turn-based 1v1 shooting with a physics hit on every turn. Easy to read, easy to film.
+  rules:
+    cards:
+    - name: Ragdoll Archers
+      image: img/ragdoll-archers.png
+      take: |
+        **Turn-based ragdoll bow duel.**
+
+        - Players take turns: shoot, then defend
+        - Where the arrow lands on the body matters
+        - The match ends on a KO or after the final round
+    - name: Craftera
+      image: img/craftera.png
+      link: https://apps.apple.com/us/app/craftera-roguelike-td/id6789571262
+      take: |
+        **Merge base materials into weapons.**
+
+        - Start with a few base materials and combine them into weapons and defenses
+        - Compound crafts: merge a crafted item with more materials to raise its tier
+        - Hand limit of 5 slots, so players must spend or merge
+        - Deterministic recipes in a recipe book
+    points:
+      - Each round, both players shoot once and defend once. 4–5 rounds, or a KO ends it early.
+      - Limb damage changes the controls. Arm hits sway the aim, leg hits shorten the dodge.
+      - Compound weapons up to 3 tiers. Use it now, or keep investing for a stronger shot later.
+  meta:
+    cards:
+    - name: Craftera
+      image: img/craftera.png
+      link: https://apps.apple.com/us/app/craftera-roguelike-td/id6789571262
+      take: |
+        - Material deck built from unlocked materials, with a small starting hand (proposed 3)
+        - Characters with stats that boost a type of craft (pyro archer, blacksmith)
+        - Unlocks from match rewards and progression
+    points:
+      - Recipe book. Discovered recipes stay discovered.
+    consider:
+      - Era progression, from stone age to modern or future, each with new materials and opponents.
+  theme:
+    points:
+      - Physics humor and short skill duels
+      - Elemental crafting. Fire, ice, wood, metal.
+    consider:
+      - Era progression as the theme. Gives the content ladder a theme and an ad hook. Still an open question.
+  visual_hook:
+    label: Marketability
+    cards:
+    - name: Kick the Buddy
+      image: img/kick-the-buddy.png
+      take: Reactive ragdolls that feel every hit. Ice freezes a limb stiff, fire makes the ragdoll flail.
+      why: Ragdoll reactions are the marketing hook, and limb damage feeds straight back into the controls.
+    - name: Bowmasters
+      image: img/bowmasters.png
+      take: Over-the-top bow duels where every hit lands with a big physical reaction. Short, funny clips that are easy to film.
+    points:
+      - Hit camera. Strong limb hits trigger an automatic slow-mo zoom, so the game generates its own ad clips.
+      - Crafting and limb effects must be visible in the first seconds of every ad.
+  monetization:
+    points:
+      - "Rewarded ads: an extra starting material, a recipe hint, double rewards after a match"
+      - "IAP: ragdoll and bow skins, hit effects, character unlocks, a season pass, remove ads"
+    reject:
+      - Paid power inside matches
+    note: Earn mainly from cosmetics, character unlocks, a season pass and rewarded ads. Fairness rules are in the design.
+
+sanity_check:
+  - heading: Every hit shows and matters
+    body: Ragdoll reactions are the marketing hook, and limb damage feeds straight back into the controls.
+    reasoning: |
+      | Hit zone | Effect on the hit player |
+      |---|---|
+      | Arm | Aim sways more; max draw power is capped |
+      | Leg | Shorter dodge; may kneel, which lowers the shooting position |
+      | Head | High damage; a cracked helmet makes the next head hit lethal |
+      | Torso | Armor plates break off |
+    refs: [c1, e1, visual_hook]
+  - heading: Spend, invest or defend
+    body: Each turn is a choice between hitting the opponent, grabbing materials, powering up a weapon or protecting yourself.
+    refs: [c2, rules]
+  - heading: One more craft
+    body: Discovering combinations and building a deck drives the long-term meta.
+    refs: [c3, meta, rules]
+  - heading: Fair and readable
+    body: Both players see the same materials; one shot, one body, one clear outcome.
+    refs: [monetization, toy]
+  - heading: The game films its own ads
+    body: Strong limb hits trigger an automatic slow-mo zoom. Every match produces ad clips.
+    refs: [c1, e1, visual_hook]
+  - heading: Comebacks built in
+    body: Extra crafting materials at health thresholds (proposed 66% and 33%), plus healing items that repair a damaged limb.
+    refs: [c3, q2]
+
+open_questions:
+  - id: q1
+    question: How many materials in the starting hand, and how big is a deck?
+    status: open
+  - id: q2
+    question: Exact health thresholds, and how many bonus materials does each give?
+    status: open
+  - id: q3
+    question: Turn timer length in PvP for aiming, defending and crafting?
+    status: open
+  - id: q4
+    question: 2D or 3D ragdolls?
+    status: open
+
+directions_heading: The design
+directions_sub: One direction. AI opponents first, built for async PvP next.
+directions:
+  - name: Turn-based ragdoll archery duel
+    tag: Game design
+    summary: Shoot, defend, craft. 4–5 rounds or a KO. Matches run about 2.5–3 minutes.
+    image: img/ragdoll-archers-combat.jpg
+    loop_heading: The core loop
+    loop:
+      - step: Pick a starting hand
+        note: A few materials from your deck (proposed 3).
+      - step: Shoot
+        note: The foe, the floating materials, or both in one arrow.
+      - step: Defend
+        note: Dodge or shield. One joystick.
+      - step: Craft
+        note: Combine materials or power up a weapon. Under 5 seconds per craft.
+      - step: Next round
+        note: Repeat shoot, defend, craft for 4–5 rounds.
+      - step: Match ends
+        note: KO or final round.
+      - step: Rewards
+        note: Progress toward new materials and characters.
+      - step: Build your deck
+        note: Materials and characters shape the next starting hand.
+    body: |
+      Opponents are AI in the first version; the design is built for async PvP next.
+      Target: hybrid-casual mobile players who enjoy physics humor and short skill duels.
+
+      ## Shoot phase
+
+      Each round, both players shoot once and defend once. A match is 4–5 rounds, or ends early on a KO.
+
+      <div class="figure-grid">
+        <figure tabindex="0"><img src="img/shoot/shoot-pose-aim.svg" alt="Archer dragged back to set angle and draw power, with a short arc preview"><span class="label">Pose-aiming</span><span class="desc">You aim by moving the ragdoll's body: drag to set angle and draw power. A short arc preview shows the first part of the trajectory.</span></figure>
+        <figure tabindex="0"><img src="img/shoot/shoot-target.svg" alt="One arrow passes through two floating materials and hits the opponent"><span class="label">Choose a target</span><span class="desc">The opponent, the floating materials, or both in one arrow. Arrows pass through materials and collect them, so a skilled shot can grab two materials and still land a hit.</span></figure>
+        <figure tabindex="0"><img src="img/shoot/shoot-weapon.svg" alt="Weapon hand with the basic bow, a fire arrow, a spear and a bomb"><span class="label">Choose what to fire</span><span class="desc">The basic bow (infinite) or a crafted weapon (limited uses).</span></figure>
+        <figure tabindex="0"><img src="img/shoot/shoot-thrown.svg" alt="A flat long arrow arc compared with a short high bomb throw that knocks the opponent back"><span class="label">Shot or thrown</span><span class="desc">Bow-type weapons have long range and a flatter arc. Spears, axes and bombs have short range, a high arc and big knockback, and are consumed on throw.</span></figure>
+      </div>
+
+      ## Defend phase
+
+      <div class="figure-grid">
+        <figure tabindex="0"><img src="img/shoot/defend-joystick.svg" alt="Ragdoll holding a shield, with a joystick: up and down move the shield, left and right dodge"><span class="label">One joystick</span><span class="desc">Left/right dodges, up/down moves an equipped shield or defensive item to cover head or torso.</span></figure>
+        <figure tabindex="0"><img src="img/shoot/defend-dodge.svg" alt="Ragdoll takes a short step aside and the arrow misses; two of three dodges left"><span class="label">Limited dodges</span><span class="desc">Dodging is limited: short range, a set number of steps per match.</span></figure>
+        <figure tabindex="0"><img src="img/shoot/defend-break.svg" alt="A wooden shield shatters in one hit while a metal plate only cracks"><span class="label">Breakable defenses</span><span class="desc">Defenses break when hit, and the materials used to build them are lost. Durability depends on material: wood breaks in one hit, metal cracks first.</span></figure>
+        <figure tabindex="0"><img src="img/shoot/defend-hit-zones.svg" alt="Ragdoll with its head, arm, torso and leg zones marked, and what a hit to each does"><span class="label">Hit zones</span><span class="desc">Limb damage changes the controls. Arm: aim sways more and max draw power is capped. Leg: shorter dodge, may kneel and lower the shooting position. Head: high damage, and a cracked helmet makes the next head hit lethal. Torso: armor plates break off. Every effect shows on screen.</span></figure>
+      </div>
+
+      ## Materials and crafting
+
+      <div class="figure-grid cols-3">
+        <figure tabindex="0"><img src="img/shoot/craft-flow.svg" alt="Starting-hand materials and materials shot out of the air combine into a weapon, a defense or a healing item"><span class="label">From materials to items</span><span class="desc">Players start each match with a few materials from their deck, collect more by shooting floating materials, and combine them into weapons, defenses and healing items in a few seconds.</span></figure>
+        <figure tabindex="0"><img src="img/shoot/craft-floating.svg" alt="Materials drift between two archers in the same spots for both players"><span class="label">Floating materials</span><span class="desc">Materials drift through the arena during the shoot phase. Both players get the same spawns (same seed), so it stays fair. The spawn pool mixes materials both players have unlocked.</span></figure>
+        <figure tabindex="0"><img src="img/shoot/craft-rules.svg" alt="Drag wood onto fire to make a fire arrow, upgrade it through three tiers, five hand slots and a recipe book"><span class="label">Crafting rules</span><span class="desc">Drag one material onto another; the result is revealed instantly, in under 5 seconds per craft (timed in PvP). Combine a crafted item with more materials to raise its tier, up to 3. Use it now or keep investing. Hand limit: 5 slots, so spend or merge. Recipes are deterministic and tracked in a recipe book.</span></figure>
+      </div>
+
+      ## What you can craft
+
+      <div class="figure-grid">
+        <figure tabindex="0"><img src="img/shoot/make-ammo.svg" alt="Fire arrow, ice arrow, split arrow and heavy arrow, with 1 to 3 uses"><span class="label">Shot ammo</span><span class="desc">Fire arrow, ice arrow, split arrow, heavy arrow. Fired from the bow, 1–3 uses each.</span></figure>
+        <figure tabindex="0"><img src="img/shoot/make-thrown.svg" alt="Spear, throwing axe and bomb, consumed on throw"><span class="label">Thrown weapons</span><span class="desc">Spear, throwing axe, bomb. Short range, high arc and big knockback. Consumed on throw.</span></figure>
+        <figure tabindex="0"><img src="img/shoot/make-defenses.svg" alt="Wooden shield, metal plate and ice wall, which break when hit"><span class="label">Defenses</span><span class="desc">Wooden shield, metal plate, ice wall. They break when hit, and the materials used to build them are lost.</span></figure>
+        <figure tabindex="0"><img src="img/shoot/make-healing.svg" alt="Bandage and potion, which restore health or repair a limb"><span class="label">Healing</span><span class="desc">Bandage, potion. Restore health or repair a damaged limb.</span></figure>
+      </div>
+
+      ## Meta progression
+
+      Between matches, players unlock new materials and characters, build a deck of materials, and pick a few of them to start each match.
+
+      - **Material deck.** The player's collection of unlocked materials. Before a match, they choose a small starting hand from it (proposed 3).
+      - **Characters.** Unlocked over time. Each has stats that boost a type of craft: a pyro archer makes fire crafts stronger, a blacksmith makes metal defenses more durable.
+      - **Unlocks.** New materials and characters come from match rewards and progression.
+      - **Recipe book.** Discovered recipes stay discovered.
+      - **Era progression.** Unlocks grouped into eras, from stone age to modern or future, each with new materials and opponents.

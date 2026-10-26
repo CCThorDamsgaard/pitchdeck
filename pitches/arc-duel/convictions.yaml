@@ -1,0 +1,43 @@
+# Arc Duel convictions. Kept in this pitch folder so they do not replace the shared convictions.yaml in the pitchdeck repo.
+# pitch.yaml references these by id; image paths are relative to this file.
+# short: the two-or-three-word label under the circle.
+# images: up to three, relative to this file. They are composited into the circle.
+# statement: one sentence, shown on hover and at the top of the breakdown.
+# reasoning: markdown, the full argument.
+
+- id: c1
+  short: Ragdoll marketability
+  images: [img/kick-the-buddy.png, img/ragdoll-archers.png]
+  statement: Reactive ragdolls that feel every hit sell themselves, and Kick the Buddy and Ragdoll Archers show it.
+  reasoning: |
+    **Kick the Buddy** proves that a ragdoll reacting to every hit is fun to watch on its own.
+    **Ragdoll Archers** proves the same hook works in a bow duel.
+
+    This pitch keeps that hook and makes it matter: limb damage changes how the hit player aims and moves,
+    and strong hits trigger a slow-mo hit camera, so every match produces its own ad clips.
+
+- id: c2
+  short: Turn-based joystick
+  images: [img/joystick-pvp.png]
+  statement: The joystick is used for turn-based aiming and defending, so it is never hectic and skill comes from decisions.
+  reasoning: |
+    Both players act in turns. You take your time to set up the shot and to place your dodge or shield.
+
+    - **Aiming:** set angle and draw power, with a short arc preview. No reaction race.
+    - **Defending:** left/right to dodge, up/down to move the shield over head or torso.
+
+    The input is a toy, but the skill is in the choice: who or what to shoot, which weapon to fire, and what to protect.
+
+- id: c3
+  short: Stickiness
+  images: [img/craftera.png, img/bowmasters.png]
+  statement: Power scaling, better aiming, new combinations and exciting reactive ragdoll actions bring players back for one more match.
+  reasoning: |
+    For a game to be sticky there has to be something that drives the player to press again.
+
+    | Driver | How it shows up |
+    |---|---|
+    | Power scaling | Tiered crafts inside a match; new materials, characters and a growing deck across matches |
+    | Better aiming | Pose-aiming is a skill you improve, and limb damage rewards precise shots |
+    | Combinations | Combining new materials into new and exciting equipment to use: fire arrows, ice walls, bombs and more |
+    | Reactive ragdoll actions | Every hit gets a physical reaction: limbs flail, freeze or buckle, and strong hits play in slow-mo. Landing the next great hit is its own reward |
