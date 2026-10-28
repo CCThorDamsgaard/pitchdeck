@@ -11,12 +11,12 @@ Opening the HTML files directly from disk does not work, because browsers refuse
 
 1. Create a new repository on GitHub and upload everything in this folder (or `git init`, commit and push).
 2. In the repository, go to Settings → Pages, set Source to "Deploy from a branch", pick `main` and `/ (root)`, and save.
-3. After a minute the site is live at `https://<user>.github.io/<repo>/`, and the pitch at `https://<user>.github.io/<repo>/pitches/arc-duel/`.
+3. After a minute the site is live at `https://<user>.github.io/<repo>/`, and the pitch at `https://<user>.github.io/<repo>/pitches/ragdoll-archers/`.
 4. Optional: add `og:image` and `og:url` with those absolute URLs in the pitch's `index.html` for nicer Slack previews.
 
 ## Add a pitch
 
-1. Copy `pitches/arc-duel/` to `pitches/<new-name>/`.
+1. Copy `pitches/ragdoll-archers/` to `pitches/<new-name>/`.
 2. Edit `pitch.yaml`. Drop images in `img/`.
 3. In `index.html` of the new folder, update the `<title>`, `description` and `og:*` tags. Link previews read those, not the YAML.
 4. Add a line to `pitches.yaml` so the root page lists it.
@@ -76,6 +76,6 @@ Ctrl+P prints the slides followed by every breakdown, one per page.
 
 ## Convictions and their circles
 
-Each conviction in `convictions.yaml` has a `short` label for the circle, a `statement` for hover and the top of the sheet, and up to three `images` that are composited inside the circle. Paths are relative to `convictions.yaml`. Arc Duel keeps its own `convictions.yaml` and art in `pitches/arc-duel/` (its `index.html` points `data-convictions` at it), so it can be dropped into a pitchdeck repo without replacing the shared file. Set `crossed: true` to draw a red cross over the circle, for a "do not" conviction.
+Each conviction in `convictions.yaml` has a `short` label for the circle, a `statement` for hover and the top of the sheet, and up to three `images` that are composited inside the circle. Paths are relative to `convictions.yaml`. Ragdoll Archers keeps its own `convictions.yaml` and art in `pitches/ragdoll-archers/` (its `index.html` points `data-convictions` at it), so it can be dropped into a pitchdeck repo without replacing the shared file. Set `crossed: true` to draw a red cross over the circle, for a "do not" conviction.
 
 Ingredient categories without reference cards are left off the slide. Give a category a `label` to rename it on the slide, for example `visual_hook: { label: Marketability, cards: [...] }`.

@@ -1,4 +1,4 @@
-# Arc Duel convictions. Kept in this pitch folder so they do not replace the shared convictions.yaml in the pitchdeck repo.
+# Ragdoll Archers convictions. Kept in this pitch folder so they do not replace the shared convictions.yaml in the pitchdeck repo.
 # pitch.yaml references these by id; image paths are relative to this file.
 # short: the two-or-three-word label under the circle.
 # images: up to three, relative to this file. They are composited into the circle.
